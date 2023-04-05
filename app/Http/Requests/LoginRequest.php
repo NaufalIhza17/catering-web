@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Contracts\Validation\Factory as ValidationFactory;
+
 
 class LoginRequest extends FormRequest
 {
@@ -14,7 +16,7 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => 'required',
+            'username' => 'required',   
             'password' => 'required'
         ];
     }
@@ -34,7 +36,7 @@ class LoginRequest extends FormRequest
             ];
         }
 
-        return $this->only('name', 'password');
+        return $this->only('username', 'password');
     }
 
     private function isEmail($param)
@@ -42,8 +44,8 @@ class LoginRequest extends FormRequest
         $factory = $this->container->make(ValidationFactory::class);
 
         return ! $factory->make(
-            ['name' => $param],
-            ['name' => 'email']
+            ['username' => $param],
+            ['username' => 'email']
         )->fails();
     }
 }

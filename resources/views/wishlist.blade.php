@@ -10,16 +10,19 @@
             opacity: 1;
         }
     </style>
+    <link rel="icon" href="/foto/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <nav class="bg-green-600 text-white p-6">
+    <nav class="text-white p-6">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="/" class="text-xl font-bold">My Store</a>
-            <a href="#" class="text-lg">View Cart (3)</a>
+            <a class="text-2xl font-bold text-green-600 w-32" href="{{ route('home') }}">
+                <img src="/foto/logo.png" alt="KWhite Catering"/>
+            </a>
+            <a href="#" class="text-lg text-black">View Cart (0)</a>
         </div>
     </nav>
-    <div class="container mx-auto mt-6">
-        <h1 class="text-2xl font-bold mb-6">Wishlist</h1>
+    <div class="text-white w-screen mx-auto mt-6 bg-green-300">
+        <h1 class="text-2xl text-white font-bold mb-6 mt-10">Wishlist</h1>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="card">
                 <div class="h-56 bg-gray-300"></div>

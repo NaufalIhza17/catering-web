@@ -12,12 +12,14 @@ class RegisterController extends Controller
         return view('signup');
     }
 
+    // RegisterRequest $request
     public function register(RegisterRequest $request) 
     {
+        // return request()->all();
         $user = User::create($request->validated());
 
         auth()->login($user);
-
+            
         return redirect('/')->with('success', "Account successfully registered.");
     }   
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FoodController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -16,16 +17,6 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-Route::get('/checkout', function () {
-    return view('checkout');
-});
-// Route::get('/register', [RegisterController::class, 'show'])->name('register');
-
-Route::get('/wishlist', function () {
-    return view('wishlist');
-});
-// Route::get('/register', [RegisterController::class, 'show'])->name('register');
-
 Route::group(['namespace' => 'App\Http\Controllers'], function() {   
     /* Home Routes */
     Route::get('/', 'HomeController@index')->name('home');
@@ -39,9 +30,13 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
         Route::get('/login', 'LoginController@show')->name('login.show');
         Route::post('/login', 'LoginController@login')->name('login.perform');
     });
-
+    
     Route::group(['middleware' => ['auth']], function() {
         /* Logout Routes */
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
+        Route::get('/checkout', 'FoodController@index')->name('checkout.index');
+        Route::get('/wishlist', 'WishlistController@index')->name('wishlist.index');
+
+        Route::post('/food', 'FoodController@store')->name('food.store');
     });
 });
