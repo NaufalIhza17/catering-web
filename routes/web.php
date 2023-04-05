@@ -1,10 +1,6 @@
 <?php
 
-use App\Http\Controllers\FoodController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +32,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
         Route::get('/checkout', 'FoodController@index')->name('checkout.index');
         Route::get('/wishlist', 'WishlistController@index')->name('wishlist.index');
+
+        Route::get('/review', 'ReviewController@index')->name('review.index');
+        Route::post('/review', 'ReviewController@store')->name('review.store');
+        Route::delete('/review/{review}', 'ReviewController@destroy')->name('review.destroy');
+
 
         Route::post('/food', 'FoodController@store')->name('food.store');
     });

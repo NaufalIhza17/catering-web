@@ -27,15 +27,14 @@
         </a>    
         @endguest
         @auth
+          <a href="{{ route('review.index') }}" class="text-gray-500 hover:text-gray-800" title="Wishlist">
+            <img src="/foto/review.png" alt="review" class="w-7">
+          </a>
           <a href="{{ route('wishlist.index') }}" class="text-gray-500 hover:text-gray-800" title="Wishlist">
-            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-              <path d="M10 20a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0-12a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm8 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 12a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
-            </svg>
+            <img src="/foto/wishlist.png" alt="wishlist" class="w-7">
           </a>
           <a href="{{ route('checkout.index') }}" class=" text-gray-500 hover:text-gray-800" title="Cart">
-            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-              <path d="M9 20c1.1 0 2-.9 2-2H7c0 1.1.9 2 2 2zm7-2c0 1.1.9 2 2 2h-2c-1.1 0-2-.9-2-2zM4 4v2h16V4H4zm4 4v2h8V8H8zm0 4v2h8v-2H8zm0 4v2h6c0-1.1.9-2 2-2s2 .9 2 2h2c0-2.76-2.24-5-5-5-1.54 0-2.94.7-3.88 1.8l1.45 1.45C9.38 13.69 10 12.95 10 12zm7.5-5l-1-1h-5l-1 1H8v2h8v-2h-.5z"/>
-            </svg>
+            <img src="/foto/shopping-cart.png" alt="cart" class="w-7">
           </a>
           {{auth()->user()->name}}
           <div class="">
@@ -147,17 +146,17 @@
                     <button class="bg-gray-300 hover:bg-gray-400 rounded-full h-8 w-8 flex justify-center items-center" onclick="incrementQuantity()">+</button>
                   </div>
                   <script>
-    function incrementQuantity() {
-      var quantity = document.getElementById('quantity');
-      quantity.value++;
-    }
-    function decrementQuantity() {
-      var quantity = document.getElementById('quantity');
-      if (quantity.value > 1) {
-        quantity.value--;
-      }
-    }
-  </script>
+                    function incrementQuantity() {
+                      var quantity = document.getElementById('quantity');
+                      quantity.value++;
+                    }
+                    function decrementQuantity() {
+                      var quantity = document.getElementById('quantity');
+                      if (quantity.value > 1) {
+                        quantity.value--;
+                      }
+                    }
+                  </script>
                 @endauth
               </div>
               <div class="text-center shadow-lg hover:drop-shadow-2xl hover:scale-105 transition p-10 rounded-xl my-10 dark:bg-white flex-1 h-fit">

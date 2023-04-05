@@ -32,16 +32,17 @@
 </head>
 <body class="bg-gray-100">
     <div class="container mx-auto">
-    <a href="{{ route('home') }}">
-      <img class="w-40 mx-auto" src="/foto/logo.png" alt="KWhite Catering"/>
-      </a>
+        <a href="{{ route('home') }}">
+            <img class="w-40 mx-auto" src="/foto/logo.png" alt="KWhite Catering"/>
+        </a>
         <h1 class="text-4xl font-bold text-center mb-10">Leave Your Feedback</h1>
-        <form class="max-w-lg mx-auto" action="#" method="POST">
+        <form class="max-w-lg mx-auto" action="{{ route('review.store') }}" method="POST">
+            @csrf
             <div class="mb-5">
-                <label class="block text-gray-700 font-bold mb-2" for="message">
+                <label class="block text-gray-700 font-bold mb-2" for="review">
                     Message
                 </label>
-                <textarea class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Your Message"></textarea>
+                <input type="text" name="review" id="review" value="{{ old('review') }}" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Your Message">
             </div>
             <div class="flex items-center mb-5">
                 <span class="mr-2 text-gray-700 font-bold">Rate Your Experience:</span>
@@ -66,25 +67,32 @@
         </form>
         <div class="mt-10">
             <h2 class="text-2xl font-bold mb-5">Recent Feedback:</h2>
-            <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            <div class="flex justify-between mb-5">
-                <div class="flex items-center">
-                    <span class="text-lg font-bold mr-2">John Doe</span>
-                    <span class="text-gray-600">(johndoe@example.com)</span>
+            @foreach ($reviews as $review)
+            <div class="bg-white shadow-md rounded-2xl px-8 pt-6 pb-8 mb-4">
+                <div class="flex justify-between mb-5">
+                    <div class="flex items-center">
+                        <span class="text-lg font-bold mr-2">Anonymous</span>
+                    </div> 
+
+                    
+                    <div class="flex items-center">
+                        @for ($i = 0; $i < $review->rating; $i++)
+                            <span class="text-yellow-400 mr-1">&#9733;</span>
+                        @endfor
+                    </div>
                 </div>
-            <div class="flex items-center">
-            <span class="text-yellow-400 mr-1">&#9733;</span>
-            <span class="text-yellow-400 mr-1">&#9733;</span>
-            <span class="text-yellow-400 mr-1">&#9733;</span>
-            <span class="text-yellow-400">&#9733;</span>
-            <span class="text-yellow-400">&#9733;</span>
-             </div>
-        </div>
-        <div class="text-gray-700">
-            <p>This is a great product! I've been using it for a few weeks now and it's made a huge difference in my daily routine.</p>
-        </div>
-        </form>
-    </div>
+                <div class="text-gray-700">
+                    {{-- <p>This is a great product! I've been using it for a few weeks now and it's made a huge difference in my daily routine.</p> --}}
+                    <p>"{{ $review->review }}"</p>
+                </div>
+                <form action="{{ route('review.destroy', $review) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="bg-red-500 text-white px-3 py-1 rounded-lg mt-4" type="submit">Delete</button>
+                </form>
+            </div>
+            @endforeach
+
 </div> 
 </body>
 </html>
