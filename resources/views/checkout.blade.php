@@ -11,7 +11,7 @@
 <body class="bg-gray-100">
 
   <div class="container mx-auto py-8">
-    <h1 class="text-3xl font-bold mb-8">Your Cart</h1>
+    <h1 class="text-3xl font-bold mb-8">Your Cart!</h1>
 
     @if ($foods)
       @foreach ($foods as $food)
