@@ -21,9 +21,9 @@
             <a href="#" class="text-lg text-black">View Cart (0)</a>
         </div>
     </nav>
-    <div class="text-white w-screen mx-auto mt-6 bg-green-300">
-        <h1 class="text-2xl text-white font-bold mb-6 mt-10">Wishlist</h1>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="text-white mx-40 mt-6 bg-emerald-400">
+        <h1 class="text-2xl text-black font-bold mb-6 mt-10">Wishlist</h1>
+        <div class="grid gap-6">
             <div class="card">
                 <div class="h-56 bg-gray-300"></div>
                 <div class="p-4">
