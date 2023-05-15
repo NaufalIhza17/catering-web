@@ -45,32 +45,31 @@
     </nav>
   </section>
 
-  <section class="bg-slate-200">
+  <section class="bg-[url('/public/foto/satu.jpg')] bg-no-repeat bg-cover bg-blend-screen">
   <div class="text-center p-10">
-    <h1 class="mb-2 font-bold text-5xl text-green-600">
-      Welcome!
-    </h1>
-    <h3 class="text-2xl font-semibold">Best Catering in Town</h3>
-    <p class="mt-3 mx-auto text-center w-[70%]">
-      A culinary experience that immerses you in the rich and diverse flavors of Indonesia. 
+    <div class="mx-auto w-[30%] bg-black py-5 rounded-t-md bg-opacity-80">
+      <h1 class="mb-2 font-extrabold text-5xl text-green-600">
+        Welcome!
+      </h1>
+      <h3 class="text-2xl font-bold text-white">Best Catering in Town</h3>
+    </div>
+    <p class="mx-auto text-center w-[30%] bg-white bg-opacity-60 py-5 px-7 rounded-b-md">
+      "<span class="text-lg font-bold">A</span> culinary experience that immerses you in the rich and diverse flavors of Indonesia. 
       From the spicy and savory dishes of Sumatra to the sweet and aromatic desserts of Java, 
       Our catering service offers a range of dishes that showcase the unique and exotic 
-      tastes of this Southeast Asian archipelago.
+      tastes of this Southeast Asian archipelago?.
     </p>
-    <div class="relative mx-auto rounded-full w-52 mt-12 overflow-hidden">
-      <img src="/foto/satu.jpg" alt="buffet"/>
-    </div>
   
   </div>
   </section>
   <section class="px-20 pb-20"> 
-    <h3 class="text-3xl py-1 dark:text-black text-center my-16 font-bold">Our Menu</h3>
+    <h3 class="text-3xl py-1 dark:text-black text-center mt-10 mb-6 font-bold">Our Menu</h3>
       <div class="lg:flex gap-10">
-        <div class="text-center mx-auto shadow-lg hover:drop-shadow-2xl hover:scale-105 transition p-10 rounded-xl my-10 dark:bg-white flex-1 h-fit">
-          <div class="relative rounded-full w-fit h-80 mt-12 overflow-hidden">
+        <div class="text-center mx-auto shadow-lg hover:drop-shadow-2xl hover:scale-105 transition p-10 rounded-xl my-10 dark:bg-slate-200 flex-1 h-fit">
+          <div class="relative rounded-full w-fit h-80 overflow-hidden">
             <img src="/foto/dua.jpg" alt="breakfast"/>
               </div>          
-                <h3 class="text-lg font-medium pb-2">
+                <h3 class="text-lg font-medium pb-2 pt-5">
                   Breakfast
                 </h3>
                 <div class="h-24">
@@ -123,12 +122,12 @@
                 </script>
                 @endauth
             </div>
-              <div class="text-center shadow-lg hover:drop-shadow-2xl hover:scale-105 transition p-10 rounded-xl my-10 dark:bg-white flex-1 h-fit">
-              <div class="relative mx-auto rounded-full w-fit h-80 mt-12 overflow-hidden">
-                <img src="/foto/tiga.jpg" alt="breakfast"/>
+              <div class="text-center shadow-lg hover:drop-shadow-2xl hover:scale-105 transition p-10 rounded-xl my-10 dark:bg-slate-200 flex-1 h-fit">
+              <div class="relative mx-auto rounded-full w-fit h-80 overflow-hidden">
+                <img src="/foto/tiga.jpg" alt="lunch"/>
               </div>
                 
-                <h3 class="text-lg font-medium pb-2 ">
+                <h3 class="text-lg font-medium pb-2 pt-5">
                   Lunch
                 </h3>
                 <div class="h-24">
@@ -159,12 +158,12 @@
                   </script>
                 @endauth
               </div>
-              <div class="text-center shadow-lg hover:drop-shadow-2xl hover:scale-105 transition p-10 rounded-xl my-10 dark:bg-white flex-1 h-fit">
-                <div class="relative mx-auto rounded-full w-64 h-80 mt-12 overflow-hidden">
-                  <img src="/foto/empat.jpg" alt="breakfast"/>
+              <div class="text-center shadow-lg hover:drop-shadow-2xl hover:scale-105 transition p-10 rounded-xl my-10 dark:bg-slate-200 flex-1 h-fit">
+                <div class="relative mx-auto rounded-full w-fit h-80 overflow-hidden">
+                  <img src="/foto/empat.jpg" alt="dessert"/>
                 </div>
               
-                <h3 class="text-lg font-medium pb-2 ">Dessert</h3>
+                <h3 class="text-lg font-medium pb-2 pt-5">Dessert</h3>
                 <div class="h-24">
                   <p class="py-2">
                   local cuisine with Arabs, Chinese, Indian, and European
