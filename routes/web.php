@@ -27,10 +27,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
         Route::post('/login', 'LoginController@login')->name('login.perform');
 
         /* Fallback Routes */
-        Route::fallback(function(){return redirect('/');});
+        // Route::fallback(function(){return redirect('/');});
     });
     
-    Route::group(['middleware' => ['auth', 'RedirectIfNotAuthenticated']], function() {
+    Route::group(['middleware' => ['auth']], function() {
         /* Logout Routes */
         Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
         Route::get('/checkout', 'FoodController@index')->name('checkout.index');
